@@ -1,0 +1,181 @@
+* { 
+    box-sizing: border-box;
+}
+
+.main {
+    height: 100vh;
+}
+.container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.game div {
+    height: 80px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.game div:nth-child(-n+3) {
+    border-top: none;
+}
+
+
+.game div:nth-child(n+7) {
+    border-bottom: none;
+}
+
+.game div:nth-child(3n+1) {
+    border-left:none;
+}
+
+.game div:nth-child(3n+3) {
+    border-right: none;
+}
+
+.x { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.x::after { 
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 10px;
+    background-color: black;
+    transform:rotate(45deg);
+
+}
+
+.x::before { 
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 10px;
+    background-color: black;
+    transform:rotate(-45deg);
+    /* background-color: #b0bec5; */
+}
+
+.circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle::after {
+    content: "";
+    position: absolute;
+    width: 65px;
+    background-color: black;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* hover */
+/* hover x */
+.game-x div:hover:not(.x):not(.circle){
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.game-x div:not(.x):not(.circle):hover::after {
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 10px;
+    background-color: lightgray;
+    transform:rotate(45deg);
+}
+
+.game-x div:not(.x):not(.circle):hover::before {
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 10px;
+    background-color: lightgray;
+    transform:rotate(-45deg);
+}
+
+/* hover circle */
+
+.game-circle div:hover:not(.circle):not(.x){
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}  
+
+.game-circle div:not(.circle):not(.x):hover::after {
+    content: "";
+    position: absolute;
+    width: 65px;
+    background-color: lightgray;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.game-circle div:not(.circle):not(.x)::before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.end_game {
+    position:none;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.end_game a {
+    background-color: black;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.end_game a:hover {
+    color: black;
+    background-color: white;
+    transition: 0.2s;
+}
+
+.end_game div p {
+    color: white;
+    font-size: 40px;
+}
+
+.end_game.show { 
+    position: fixed;
+}
