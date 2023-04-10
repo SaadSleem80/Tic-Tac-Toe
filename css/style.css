@@ -156,7 +156,7 @@
     align-items: center;
     z-index: 1;
 }
-.end_game a {
+.end_game button {
     background-color: black;
     color: white;
     outline: none;
@@ -165,7 +165,7 @@
     border-radius: 5px;
     text-decoration: none;
 }
-.end_game a:hover {
+.end_game button:hover {
     color: black;
     background-color: white;
     transition: 0.2s;

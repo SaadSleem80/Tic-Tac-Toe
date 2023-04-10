@@ -26,8 +26,6 @@ function handelClick(e) {
         swapTurn(currentClass);
         hoverEffect(currentClass);
     }
-    console.log(isDraw);
-
 }
 ///////////////////////////////
 function endgame(draw) { 
@@ -88,3 +86,7 @@ let winningCombinations = [
     [0,4,8],
     [2,4,6]
 ]
+
+function reload() {
+    location.reload();
+}
