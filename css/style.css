@@ -115,7 +115,6 @@
     background-color: lightgray;
     transform:rotate(-45deg);
 }
-
 /* hover circle */
 
 .game-circle div:hover:not(.circle):not(.x){
@@ -151,7 +150,7 @@
     width: 100%;
     height: 100vh;
     background-color: rgb(0, 0, 0, 40%);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1;
@@ -178,4 +177,5 @@
 
 .end_game.show { 
     position: fixed;
+    display: flex;
 }
